@@ -323,13 +323,6 @@ contract TEST is Context, IERC20, Ownable {
         _isTradingEnabled = true;
     }
 
-    function whiteListFromFees(address account) public onlyOwner {
-        _isExcludedFromFee[account] = true;
-    }
-
-    function includeInFees(address account) public onlyOwner {
-        _isExcludedFromFee[account] = false;
-    }
 
     function modifyTransferFee(uint256 _amount) public onlyOwner {
         require(_amount <= 5,"Taxes too high");
